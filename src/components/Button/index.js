@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.scss";
+import {Link} from "react-router-dom";
 
 export default function SignBtn({
     label,
@@ -14,10 +15,10 @@ export default function SignBtn({
         backgroundColor: bgc,
     };
     return (
-        <a href={href} className="SignBtn" onClick={onClick}>
+        <Link to={href} className="SignBtn" onClick={onClick}>
             <button className="btn" style={style} type={type}>
                 {label}
             </button>
-        </a>
+        </Link>
     );
 }

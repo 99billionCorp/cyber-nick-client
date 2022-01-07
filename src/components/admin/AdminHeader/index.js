@@ -1,16 +1,17 @@
 import React, { useContext } from "react";
 import "./style.scss";
 
-import { Context } from "./../../../context";
+import { Context } from "context.js";
+import {Link} from "react-router-dom";
 
 export default function Subheader() {
     const { user } = useContext(Context);
     if (user.ok && user.isAdmin) {
         return (
             <div className="adminHeader">
-                <a href="/admin/users">Пользователи</a>
-                <a href="/admin/addCourse">Добавить курс</a>
-                <a href="/admin/addfilm">Добавить фильм</a>
+                <Link to="/admin/users">Пользователи</Link>
+                <Link to="/admin/addCourse">Добавить курс</Link>
+                <Link to="/admin/addFilm">Добавить фильм</Link>
             </div>
         );
     } else {

@@ -1,37 +1,38 @@
 import React from "react";
 import CyberIzbushkaWhite from "./../../img/cyberIzbushkaWhite.png";
 import "./style.scss";
+import {Link} from "react-router-dom";
 export default function Footer() {
     return (
         <div className="footer">
-            <a href="/">
+            <Link to="/">
                 <img src={CyberIzbushkaWhite} height="50px" alt="" />
-            </a>
+            </Link>
             <ul className="footer__info footer__info_left">
                 <li>
-                    <a href="/">
+                    <Link to="/">
                         <b>Условия использования</b>
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/">
+                    <Link to="/">
                         <b>О проекте </b>
-                    </a>
+                    </Link>
                 </li>
             </ul>
             <div className="footer__info footer__info_right">
-                <a href="/">
+                <Link to="/">
                     <b>Вопросы и сотрудничество</b>
-                </a>
-                <a href="https://vk.com/al_feed.php ">
+                </Link>
+                <Link to="https://vk.com/al_feed.php ">
                     <p>Вконтакте</p>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/">
                     <p>WhatsApp</p>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/">
                     <p>Viber</p>
-                </a>
+                </Link>
             </div>
         </div>
     );

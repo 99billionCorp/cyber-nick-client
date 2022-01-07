@@ -54,7 +54,7 @@ export default function App() {
                             component={AddCourse}
                         />
                         <Route path={"/admin/users"} component={Users} />
-                        <Route path={"/admin/addfilm"} component={AddFilm} />
+                        <Route path={"/admin/addFilm"} component={AddFilm} />
                         {/* <Route path={'/about'} component={About} /> */}
                         {/* <Route path={'/lectures'} component={Lectures} /> */}
                         {/* <Route path={'/library'} component={Libriary} /> */}
