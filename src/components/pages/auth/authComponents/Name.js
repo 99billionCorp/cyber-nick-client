@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function Name() {
   return (
@@ -6,5 +6,5 @@ export default function Name() {
       <span>Имя:</span>
       <input type="text" placeholder="Enter name" name="name" />
     </label>
-  )
+  );
 }

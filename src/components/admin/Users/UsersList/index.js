@@ -1,27 +1,27 @@
-import React from 'react'
-import './style.scss'
+import React from 'react';
+import './style.scss';
 
 export default function UsersList() {
-  let users = [
+  const users = [
     {
-      login: "Killer",
-      name: "Alexander",
-      state: "Не куплен"
+      login: 'Killer',
+      name: 'Alexander',
+      state: 'Не куплен',
     },
     {
-      login: "Hiller",
-      name: "Katerina",
-      state: "Куплен"
+      login: 'Hiller',
+      name: 'Katerina',
+      state: 'Куплен',
     },
     {
-      login: "Triller",
-      name: "Bill",
-      state: "Не куплен"
-    }
-  ]
-  let arr = [];
+      login: 'Triller',
+      name: 'Bill',
+      state: 'Не куплен',
+    },
+  ];
+  const arr = [];
 
-  users.forEach(el => {
+  users.forEach((el) => {
     arr.push(
       (
         <p className="user">
@@ -30,10 +30,9 @@ export default function UsersList() {
           <span>{el.state}</span>
           <button>Изменить</button>
         </p>
-      )
-    )
-  })
-
+      ),
+    );
+  });
 
   return arr;
 }

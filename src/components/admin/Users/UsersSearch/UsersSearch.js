@@ -1,5 +1,5 @@
-import React from 'react'
-import './UsersSearch.scss'
+import React from 'react';
+import './UsersSearch.scss';
 
 export default function UsersSearch() {
   return (
@@ -9,5 +9,5 @@ export default function UsersSearch() {
         <button className="UserSearch__btn">Найти пользователя</button>
       </form>
     </div>
-  )
+  );
 }

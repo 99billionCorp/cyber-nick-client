@@ -1,28 +1,30 @@
-import React, { useState, useEffect } from "react";
-import Lecture from "./Lecture";
+import React, { useState, useEffect } from 'react';
+import Lecture from './Lecture';
 
 export default function Lectures({ n, changeModule }) {
-    let arr = [];
+  const arr = [];
 
-    const [lectures, setLectures] = useState([]);
+  const [lectures, setLectures] = useState([]);
 
-    const onLacturesChange = (id, lecture) => {
-        setLectures([
-            ...lectures.slice(0, id),
-            lecture,
-            ...lectures.slice(id + 1),
-        ]);
-    };
+  const onLecturesChange = (id, lecture) => {
+    setLectures([
+      ...lectures.slice(0, id),
+      lecture,
+      ...lectures.slice(id + 1),
+    ]);
+  };
 
-    useEffect(() => {
-        changeModule("lectures", lectures);
-    }, [lectures]);
+  useEffect(() => {
+    changeModule('lectures', lectures);
+  }, [lectures]);
 
-    for (let i = 0; i < n; i++) {
-        arr.push(
-            <Lecture num={i} onLacturesChange={onLacturesChange} key={i} />
-        );
-    }
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < n; i++) {
+    arr.push(
+      // eslint-disable-next-line react/jsx-filename-extension
+      <Lecture num={i} onLacturesChange={onLecturesChange} key={i} />,
+    );
+  }
 
-    return arr;
+  return arr;
 }
