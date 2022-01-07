@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import "./style.scss";
+import {ALL_CURSES_URL} from "constants.js";
 
 export default function CourseList() {
     // Получение списка курсов
@@ -9,7 +9,7 @@ export default function CourseList() {
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
-        fetch("/courses/all", {
+        fetch(ALL_CURSES_URL, {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -35,7 +35,7 @@ export default function CourseList() {
                                             e.backgroundImageLink || ""
                                         })`,
                                     }}
-                                ></div>
+                                />
                                 <p
                                     style={{
                                         color: e.courseNameColor,

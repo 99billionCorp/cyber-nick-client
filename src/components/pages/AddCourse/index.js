@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.scss";
 import AddModules from "./AddModules";
 import Button from "components/Button";
+
 export default function AddCourse() {
     const [course, setCourse] = useState({});
 
@@ -9,7 +10,7 @@ export default function AddCourse() {
         setCourse({ ...course, [key]: label });
     };
 
-    const fetchCourse = async (e) => {
+    const fetchCourse = async () => {
         await fetch("/courses/add", {
             method: "POST",
             headers: {
