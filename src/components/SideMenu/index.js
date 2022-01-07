@@ -24,7 +24,7 @@ export default function SideMenu({ modules, onVideoChange }) {
 
     const AddModulesInSideMenu = ({ modules = [] }) => {
         return (
-            <div class="accordion" id="accordionExample">
+            <div className="accordion" id="accordionExample">
                 {modules.map((e, index) => (
                     <div className="card">
                         <div className="card-header" id={`heading${index}`}>
