@@ -5,13 +5,12 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb',
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 'es2021',
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: [
