@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Context } from 'context';
+import { Context } from 'context.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
