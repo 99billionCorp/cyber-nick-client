@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import InfoCourse from 'components/Info_course';
-
 import SideMenu from 'components/SideMenu';
-
 import './style.scss';
+import {BASE_URL} from "constants.js";
 
 export default function Course({ match }) {
   const courseId = match.params.id;
@@ -16,7 +15,7 @@ export default function Course({ match }) {
   const [lecture, setLecture] = useState('');
 
   useEffect(() => {
-    fetch(`/courses/${courseId}/${user.login}`, {
+    fetch(`${BASE_URL}/courses/${courseId}/${user.login}`, {
       method: 'GET',
       headers: {
         Accept: 'application/json',

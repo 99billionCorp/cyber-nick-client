@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './style.scss';
+import {ADD_FILM_URL} from "constants.js";
 
 export default function AddFilm() {
   const [film, setFilm] = useState({ url: '', label: '' });
@@ -10,7 +11,7 @@ export default function AddFilm() {
   };
 
   const sendForm = () => {
-    fetch('/films/add', {
+    fetch(ADD_FILM_URL, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

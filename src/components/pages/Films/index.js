@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import ReactPlayer from 'react-player';
 import './style.scss';
+import {ALL_FILMS_URL} from "constants.js";
 
 export default function Films() {
   const [film, setFilm] = useState({
@@ -38,7 +39,7 @@ export default function Films() {
   });
 
   const getFilms = useCallback(async () => {
-    const films = await fetch('/films/all', {
+    const films = await fetch(ALL_FILMS_URL, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

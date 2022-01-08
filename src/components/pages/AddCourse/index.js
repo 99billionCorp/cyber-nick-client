@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.scss';
 import Button from 'components/Button';
 import AddModules from './AddModules';
+import {ALL_CURSES_URL} from "constants.js";
 
 export default function AddCourse() {
   const [course, setCourse] = useState({});
@@ -11,7 +12,7 @@ export default function AddCourse() {
   };
 
   const fetchCourse = async () => {
-    await fetch('/courses/add', {
+    await fetch(ALL_CURSES_URL, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

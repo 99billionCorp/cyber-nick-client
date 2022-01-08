@@ -3,8 +3,9 @@ import './style.scss';
 import Email from '../authComponents/Email';
 import Password from '../authComponents/Password';
 import SubmitBtn from '../authComponents/SubmitBtn';
-
 import { Context } from 'context.js';
+import {LOGIN_URL} from "constants.js";
+import axios from "axios";
 
 // import Message from "./../../message";
 
@@ -26,20 +27,14 @@ export default function SignIn() {
 
   const checkLogin = async (e) => {
     e.preventDefault();
-    fetch('/auth/login/adm', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({ ...user }),
-    }).then(async (res) => {
-      const user = await res.json();
-      onUserLogin(user);
-      if (user.ok) {
-        window.location.replace('/');
-      }
-    });
+    console.log('start', LOGIN_URL)
+    const res = await axios.post(LOGIN_URL, user)
+    const userData = res.data
+    console.log(userData)
+    onUserLogin(userData);
+    if (userData.ok) {
+      window.location.replace('/');
+    }
   };
 
   return (
@@ -47,8 +42,6 @@ export default function SignIn() {
       <div className="formBgc">
         {/* <Message text="Hello" /> */}
         <form
-          action="http://localhost:3001/auth/login"
-          method="POST"
           onSubmit={checkLogin}
         >
           <Email onLoginChange={onLoginChange} />
