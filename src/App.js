@@ -34,10 +34,10 @@ export default function App() {
 
   return (
     <Context.Provider value={{ onUserLogin, setUser, user }}>
-      <div className="App">
-        <Header />
-        <AdminHeader />
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <AdminHeader />
           <Switch>
             <Route path="/" exact>
               <Home />
@@ -49,8 +49,8 @@ export default function App() {
             <Route path="/auth/register" component={SignUp} />
             <Route path="/auth/logout" component={SignOut} />
             <Route
-              path="/admin/addCourse"
-              component={AddCourse}
+                path="/admin/addCourse"
+                component={AddCourse}
             />
             <Route path="/admin/users" component={Users} />
             <Route path="/admin/addFilm" component={AddFilm} />
@@ -59,9 +59,9 @@ export default function App() {
             {/* <Route path={'/library'} component={Libriary} /> */}
             <Route path="/films" component={Films} />
           </Switch>
-        </BrowserRouter>
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </Context.Provider>
   );
 }
