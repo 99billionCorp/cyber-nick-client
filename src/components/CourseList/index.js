@@ -25,7 +25,7 @@ export default function CourseList() {
       {courses.map((e) => {
         console.log(e);
         return (
-          <Link to={`/course/${e.link}`}>
+          <Link to={`/course/${e.link}`} key={e.link}>
             <div className="course">
               <div
                 className="course__img"

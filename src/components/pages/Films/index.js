@@ -26,6 +26,7 @@ export default function Films() {
 
     return (
       <li
+          key={f.url}
         className={clazz}
         onClick={() => {
           onFilmChange(url, index);

@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 export default function SideMenu({ modules, onVideoChange }) {
   const AddLectureInModule = ({ lectures }) => lectures.map((el) => (
-    <div className="list-group">
+    <div className="list-group" key={el.link}>
       <li
         className="list-group-item"
         onClick={() => {
@@ -24,7 +24,7 @@ export default function SideMenu({ modules, onVideoChange }) {
     return (
       <div className="accordion" id="accordionExample">
         {modules.map((e, index) => (
-          <div className="card">
+          <div className="card" key={e.name}>
             <div className="card-header" id={`heading${index}`}>
               <h2 className="mb-0">
                 <button

@@ -9,7 +9,7 @@ export default function InfoCourse({ shortDescription, description }) {
       <h3>Содержание курса:</h3>
       <div className="desc_long">
         {`${description}`.split('\n').map((p) => (
-          <p>{p}</p>
+          <p key={`${p}`}>{p}</p>
         ))}
       </div>
     </div>
